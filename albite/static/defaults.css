@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+}
+body{
+    background-color: rgb(228, 234, 238);
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+h1{
+    font-size: 20px;
+}
+p{
+    margin-top: 30px;
+}
+.header{
+    display: flex;
+}
+#logo{
+    width: 70%;
+    margin: auto;
+}
+@media screen and (min-width: 1000px) {
+	#logo{
+    width: 40%;
+  }
+}
+
+.btn{
+    margin-top: 10px;
+    position: fixed;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #e5e8eb;
+    background: #e94326;
+    transition: .4s;
+    z-index: 10;
+}
+.btn:hover {
+    background: #e5e8eb;
+    color: #e94326;
+  }
+.btn_que{
+    left:3%;
+    bottom: 7%;
+}
+.btn_my{
+    right: 3%;
+    top:0;
+}
+#exp{
+    margin: 60px;
+    background-color: #ffffff;
+}
+
+#exp p{
+    font: 20px;
+    margin: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.quests{
+    display: flex;
+    flex-wrap: wrap
+}
+
+.article{
+    margin: 30px;
+    background-color: #ffffff;
+    position: relative;
+    width: 300px;
+    padding-top: 300px;
+}
+.article .tex{
+    margin-left: 30px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    transform: translateY(-50%);
+
+}
+.article2{
+    margin: 30px;
+    background-color: #5abce2;
+    position: relative;
+    width: 300px;
+    padding-top: 300px;
+}
+.article2 .tex2{
+    margin-left: 30px;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    transform: translateY(-50%);
+
+}
+
+
+form{
+    width: 60%;
+    position: center;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-bottom: 30px;
+
+}
+
+.exp{
+    margin: 60px;
+    padding-left: 30px;
+    background-color: #ffffff;
+
+}
+
+footer{
+    text-align: center;
+    background-color: #ffd700;
+    height: 150px;
+    padding-top: 30px;
+}
+
+.nav {
+
+    margin-right: 20px;
+    padding-left: 30px;
+}
+.nav a{
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.mytex{
+    margin: 30px;
+}
+.mytex h1{
+    margin: 20px;
+}

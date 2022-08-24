@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{% static 'defaults.css' %}"/>
+  </head>
+  <body>
+    <div class="header">
+      <div id ="logo">
+        <img src="{% static 'img/So-danロゴ.svg'%}" >
+      </div>
+    </div>
+    
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="nameInput">登録名</label>
+        <input id="nameInput" name="name" type="text" placeholder="Name">
+      </div>
+      <div>
+        <label for="emailInput">e-mailアドレス</label>
+        <input id="emailInput" name="email" type="text" placeholder="Email">
+      </div>
+      <div>
+        <label for="nameInput">パスワード</label>
+        <input id="nameInput" name="pass" type="text" placeholder="Password">
+      </div>
+      <div>
+        <button type="submit"　href="{% url 'top' %}">ログイン</button>
+      </div>
+    </form>
+    <form action="{% url 'quest' %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="titleInput">登録名</label>
+        <input id="titleInput" name="title" type="text" placeholder="Name">
+      </div>
+      <div>
+        <label for="emailInput">e-mailアドレス</label>
+        <input id="emailInput" name="email" type="text" placeholder="Email">
+      </div>
+      <div>
+        <label for="nameInput">パスワード</label>
+        <input id="nameInput" name="pass" type="text" placeholder="Password">
+      </div>
+      <div>
+        <button type="submit"　href="{% url 'top' %}">登録</button>
+      </div>
+    </form>
+
+    <br>
+
+  </body>
+</html>

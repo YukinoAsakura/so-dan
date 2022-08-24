@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"  href="{% static 'defaults.css' %}"/>
+  </head>
+  <body>
+    <div class="header">
+      <div id ="logo">
+        <img src="{% static 'img/So-danロゴ.svg'%}" >
+      </div>
+      <div>
+        <a class="btn btn_my" href="{% url 'mypage' %}">MyPage</a>
+      </div>
+    </div>
+
+    <div id="exp">
+      <p>大学生になったからバイトをしたい、でもどんなバイトなら<br>
+        自分の希望に合っているのかわからない<br>
+        やってみたいバイトはあるけどどんなことができるようになる<br>
+        のかわからない<br>
+        <br><br>        
+        そんな時に「So-dan」を使ってみてください。<br>
+        学生バイトさんたちからリアルなアドバイスがもらえます!</p>
+    </div>
+
+    <div class="quests">
+    {% if articles %}
+      {% for article in articles %}
+      <div class="article" >
+        <div class ="tex">
+          <a href="{% url 'detail' article.id %}">{{ article.title }}</a>
+          <div>
+            {{ article.body | linebreaksbr }}
+          </div>
+          <small>[{{ article.posted_at }}]</small>
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p>No article.</p>
+    {% endif %}
+    </div>
+
+    <a class="btn btn_que"href="{% url 'quest' %}">New question</a>
+    <script src="{% static 'color.js' %}"></script>
+    <footer>
+      <div class="nav">
+        <a href="{% url 'top' %}">TOP</a>
+        <a href="{% url 'mypage' %}">MyPage</a>
+      </div>
+      <p>©2021 情報連携実習ⅣA</p>
+    </footer>
+  </body>
+</html>

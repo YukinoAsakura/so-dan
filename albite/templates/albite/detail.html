@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <olnk rel="stylesheet"  href="{% static 'defaults.css' %}"/>
+  </head>
+  <body>
+    <div class="header">
+      <div id ="logo">
+        <img src="{% static 'img/So-danロゴ.svg'%}" >
+      </div>
+      <div>
+        <a class="btn" href="{% url 'mypage' %}">MyPage</a>
+      </div>
+    </div>
+    <br>
+
+    <div class="exp">
+      <h1>タイトル</h1>
+      <p>{{ article.title }}</p>
+      <h1>本文</h1>
+      <div>
+          {{ article.body | olnebreaksbr }}
+      </div>
+      <p>投稿日時</p>
+      <small>{{ article.posted_at }}</small>
+    </div>
+
+    <hr>
+    <h2>回答</h2>
+
+    <form action="{% url 'detail' article.id %}" method="post">
+      {% csrf_token %}
+      <div>
+        <label for="textInput">回答</label>
+        <textarea id="textInput" name="ans" rows="3"></textarea>
+      </div>
+      <div>
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+
+    {% if chats %}
+    {% for chat in chats %}
+      <div class>
+        <div>
+          <small>[{{ chat.time }}]</small>
+        </div>
+        <div>
+          {{ chat.text | olnebreaksbr }}
+        </div>
+      </div>
+    {% endfor %}
+    {% else %}
+    <p>No comment.</p>
+    {% endif %}
+
+    <footer>
+      <div class="nav">
+        <a href="{% url 'top' %}">TOP</a>
+        <a href="{% url 'mypage' %}">MyPage</a>
+      </div>
+      <p>©2021 情報連携実習ⅣA</p>
+    </footer>
+
+  </body>
+</html>
